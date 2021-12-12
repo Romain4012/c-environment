@@ -9,13 +9,19 @@ int main(){
 	int e = 0;
 	scanf("%d",&e);
 	while(n != e){
-		if(e < n){
-			printf("The number to guess is higher\n");
-			scanf("%d",&e);
+		if(e > 0 && e <= 100){
+			if(e < n){
+				printf("The number to guess is higher\n");
+				scanf("%d",&e);
+			}
+			else if(e > n){
+				printf("The number to guess is lower\n");
+				scanf("%d",&e);
+			}
 		}
-		else if(e > n){
-			printf("The number to guess is lower\n");
-			scanf("%d",&e);
+		else{
+			printf("Invalid argument");
+			return 1;
 		}
 	}
 	printf("You just found the number, it was indeed %d\n", n);
